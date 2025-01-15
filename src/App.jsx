@@ -11,7 +11,7 @@ function App() {
   const [toggle, setToggle] = useState(false);
   const googleApiKey = import.meta.env.VITE_GOOGLE_API_KEY;
 
-  const API_URL = `/api/umbraco/api/IncidentApi/List?inactive=${toggle}`;
+  const API_URL = `/api/umbraco/api/IncidentApi/GeoJsonList?inactive=${toggle}`;
 
   useEffect(() => {
     const fetchIncidents = async () => {
