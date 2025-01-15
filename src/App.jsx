@@ -39,14 +39,14 @@ function App() {
           <main>
             <div className="incident-list">
               <IncidentList
-                incidents={incidents}
+                featureCollection={incidents}
                 toggle={toggle}
                 setToggle={setToggle}
               />
             </div>
             {googleApiKey && (
               <div className="map-view">
-                <MapView incidents={incidents} />
+                <MapView geoData={incidents} />
               </div>
             )}
           </main>

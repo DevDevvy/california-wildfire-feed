@@ -13,7 +13,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100%;
+  height: 100vh;
 }
 
 /* Header */
@@ -35,6 +35,7 @@ main {
   display: flex;
   flex-grow: 1;
   overflow: hidden;
+  height: 100%;
 }
 
 /* Incident List Styles */
