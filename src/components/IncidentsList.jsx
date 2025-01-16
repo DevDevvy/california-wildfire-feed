@@ -159,6 +159,22 @@ IncidentList.propTypes = {
   }),
   toggle: PropTypes.bool.isRequired,
   setToggle: PropTypes.func.isRequired,
+  properties: PropTypes.object,
+  UniqueId: PropTypes.string,
+  Name: PropTypes.string,
+  Type: PropTypes.string,
+  County: PropTypes.string,
+  Location: PropTypes.string,
+  Started: PropTypes.string,
+  Updated: PropTypes.string,
+  PercentContained: PropTypes.number,
+  AdminUnit: PropTypes.string,
+  AgencyNames: PropTypes.string,
+  ControlStatement: PropTypes.string,
+  ExtinguishedDate: PropTypes.string,
+  CalFireIncident: PropTypes.bool,
+  Url: PropTypes.string,
+  AcresBurned: PropTypes.number,
 };
 
 export default IncidentList;

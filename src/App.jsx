@@ -5,6 +5,7 @@ import MapView from "./components/MapView";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import FireResponses from "./components/RiversideFireDepartmentResponseList";
+import CrimeResponses from "./components/RiversideCrimeReportsList";
 
 function App() {
   const [incidents, setIncidents] = useState([]);
@@ -52,7 +53,10 @@ function App() {
                 </div>
               )}
             </div>
-            <FireResponses />
+            <div className="response-lists">
+              <FireResponses />
+              <CrimeResponses />
+            </div>
           </main>
           <Footer />
         </div>

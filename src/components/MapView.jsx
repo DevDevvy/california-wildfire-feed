@@ -34,7 +34,7 @@ function MapView({ geoData }) {
 
     // 3) (Optional) Style the points, lines, polygons
     //    For points, we can set a custom icon or color, etc.
-    mapRef.data.setStyle((feature) => {
+    mapRef.data.setStyle(() => {
       return {
         icon: {
           url: "http://maps.google.com/mapfiles/ms/icons/firedept.png",
