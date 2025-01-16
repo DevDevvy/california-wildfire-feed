@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import FireResponses from "./components/RiversideFireDepartmentResponseList";
 import CrimeResponses from "./components/RiversideCrimeReportsList";
+import EarthquakeComponent from "./components/EarthquakeList";
 
 function App() {
   const [incidents, setIncidents] = useState([]);
@@ -52,6 +53,9 @@ function App() {
                   <MapView geoData={incidents} />
                 </div>
               )}
+            </div>
+            <div className="earthquakes">
+              <EarthquakeComponent />
             </div>
             <div className="response-lists">
               <FireResponses />

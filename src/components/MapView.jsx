@@ -19,34 +19,27 @@ function MapView({ geoData }) {
 
   useEffect(() => {
     if (!mapRef || !geoData) return;
-
-    // 1) Clear any existing features so we can cleanly reload
     mapRef.data.forEach((feature) => {
       mapRef.data.remove(feature);
     });
 
-    // 2) Add GeoJSON to the Data layer
+    //Add GeoJSON to the Data layer
     try {
       mapRef.data.addGeoJson(geoData);
     } catch (err) {
       console.error("Error adding GeoJSON to the map:", err);
     }
 
-    // 3) (Optional) Style the points, lines, polygons
-    //    For points, we can set a custom icon or color, etc.
     mapRef.data.setStyle(() => {
       return {
         icon: {
           url: "http://maps.google.com/mapfiles/ms/icons/firedept.png",
-          scaledSize: new window.google.maps.Size(32, 32), // or adjust as needed
+          scaledSize: new window.google.maps.Size(32, 32),
         },
       };
     });
 
-    // 4) Listen for clicks on Data layer features
-    //    (We'll show how to open a custom InfoWindow or simply log the data)
     mapRef.data.addListener("click", (event) => {
-      // event.feature is the clicked GeoJSON Feature
       setSelectedFeature(event.feature);
     });
   }, [mapRef, geoData]);
@@ -64,8 +57,6 @@ function MapView({ geoData }) {
     const geometry = selectedFeature.getGeometry(); // e.g. type=Point
     const position = geometry.get(); // For points, geometry.get() returns LatLng
 
-    // InfoWindow in @react-google-maps/api is typically a child of <GoogleMap>
-    // We'll place it conditionally
     return (
       <InfoWindow
         position={position}

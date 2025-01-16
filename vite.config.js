@@ -15,6 +15,11 @@ export default defineConfig({
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/riverside/, ''),
       },
+      '/earthquakes': {
+        target: 'https://earthquake.usgs.gov/earthquakes',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/earthquakes/, ''),
+      },
     },
   },
 });
