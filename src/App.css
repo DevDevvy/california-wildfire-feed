@@ -13,7 +13,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100vh;
+  /* height: 100vh; */
 }
 
 /* Header */
@@ -30,12 +30,19 @@ header {
   align-items: center;
 }
 
+h2 {
+  text-align: center;
+}
+
 /* Main Layout */
 main {
   display: flex;
-  flex-grow: 1;
+  flex-direction: column;
+}
+.incidents-map-container {
+  display: flex;
   overflow: hidden;
-  height: 100%;
+  height: 80vh;
 }
 
 /* Incident List Styles */
@@ -87,7 +94,7 @@ main {
 /* Map View */
 .map-view {
   width: 70%;
-  height: auto;
+  height: 80vh;
   position: relative;
 }
 

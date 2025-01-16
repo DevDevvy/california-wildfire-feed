@@ -10,6 +10,11 @@ export default defineConfig({
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ''),
       },
+      '/riverside': {
+        target: 'https://www.riversideca.gov',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/riverside/, ''),
+      },
     },
   },
 });

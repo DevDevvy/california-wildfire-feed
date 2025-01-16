@@ -4,6 +4,7 @@ import IncidentList from "./components/IncidentsList";
 import MapView from "./components/MapView";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import FireResponses from "./components/RiversideFireDepartmentResponseList";
 
 function App() {
   const [incidents, setIncidents] = useState([]);
@@ -37,18 +38,21 @@ function App() {
         <div id="root">
           <Header />
           <main>
-            <div className="incident-list">
-              <IncidentList
-                featureCollection={incidents}
-                toggle={toggle}
-                setToggle={setToggle}
-              />
-            </div>
-            {googleApiKey && (
-              <div className="map-view">
-                <MapView geoData={incidents} />
+            <div className="incidents-map-container">
+              <div className="incident-list">
+                <IncidentList
+                  featureCollection={incidents}
+                  toggle={toggle}
+                  setToggle={setToggle}
+                />
               </div>
-            )}
+              {googleApiKey && (
+                <div className="map-view">
+                  <MapView geoData={incidents} />
+                </div>
+              )}
+            </div>
+            <FireResponses />
           </main>
           <Footer />
         </div>
