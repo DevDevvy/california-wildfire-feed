@@ -1,0 +1,29 @@
+import { useState } from "react";
+import { UserContext } from "./UserContext";
+
+export const UserProvider = ({ children }) => {
+  const [userLocation, setUserLocation] = useState(null);
+
+  const fetchUserLocation = () => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const { latitude, longitude } = position.coords;
+          console.log("Fetched location:", { latitude, longitude });
+          setUserLocation({ latitude, longitude });
+        },
+        (error) => {
+          console.error("Error fetching location:", error.message);
+        }
+      );
+    } else {
+      console.error("Geolocation is not supported by this browser.");
+    }
+  };
+
+  return (
+    <UserContext.Provider value={{ userLocation, fetchUserLocation }}>
+      {children}
+    </UserContext.Provider>
+  );
+};

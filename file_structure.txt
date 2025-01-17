@@ -1,0 +1,25 @@
+┣━ wildfire-tracker
+┃  ┃  README.md
+┃  ┃  eslint.config.js
+┃  ┃  file_structure.txt
+┃  ┃  index.html
+┃  ┃  package-lock.json
+┃  ┃  package.json
+┃  ┣━ public
+┃  ┃  ┃  fire.svg
+┃  ┣━ src
+┃  ┃  ┃  App.css
+┃  ┃  ┃  App.jsx
+┃  ┃  ┣━ assets
+┃  ┃  ┃  ┃  *
+┃  ┃  ┣━ components
+┃  ┃  ┃  ┃  EarthquakeList.jsx
+┃  ┃  ┃  ┃  Footer.jsx
+┃  ┃  ┃  ┃  Header.jsx
+┃  ┃  ┃  ┃  IncidentsList.jsx
+┃  ┃  ┃  ┃  MapView.jsx
+┃  ┃  ┃  ┃  RiversideCrimeReportsList.jsx
+┃  ┃  ┃  ┃  RiversideFireDepartmentResponseList.jsx
+┃  ┃  ┃  index.css
+┃  ┃  ┃  main.jsx
+┃  ┃  vite.config.js

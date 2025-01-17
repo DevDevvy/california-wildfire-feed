@@ -8,10 +8,6 @@ const Footer = () => {
         <a href="https://github.com/devdevvy" target="_blank">
           DevDevvy
         </a>
-        Data provided by{" "}
-        <a href="https://fire.ca.gov/" target="_blank">
-          fire.ca.gov
-        </a>
       </p>
     </footer>
   );

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { fetchEarthquakes } from "../api/data";
 
 const EarthquakeComponent = () => {
   const [earthquakes, setEarthquakes] = useState([]);
@@ -6,17 +7,9 @@ const EarthquakeComponent = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fetchData = async () => {
+    const getEarthquakeData = async () => {
       try {
-        const response = await fetch(
-          "/earthquakes/feed/v1.0/summary/all_hour.geojson"
-        );
-
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
-        const data = await response.json();
+        const data = await fetchEarthquakes();
         setEarthquakes(data.features);
       } catch (err) {
         setError(err.message);
@@ -25,8 +18,8 @@ const EarthquakeComponent = () => {
       }
     };
 
-    fetchData();
-    const intervalId = setInterval(fetchData, 30000); // Fetch data every 30 seconds
+    getEarthquakeData();
+    const intervalId = setInterval(getEarthquakeData, 60000); // Fetch data every minute
 
     return () => clearInterval(intervalId); // Cleanup interval on component unmount
   }, []);

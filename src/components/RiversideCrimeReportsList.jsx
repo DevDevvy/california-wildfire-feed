@@ -1,22 +1,19 @@
 import { useState, useEffect } from "react";
+import { fetchRiversideData } from "../api/data";
 
 const CrimeResponses = () => {
   const [responses, setResponses] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const datasetId = 27;
+  const query = "sort=offenseDate&order=asc&sort=callTime&sort=asc";
+
   useEffect(() => {
-    const fetchData = async () => {
+    const getCrimeData = async () => {
       try {
-        const response = await fetch(
-          "/riverside/transparency/data/dataset/json/27?sort=offenseDate&order=asc&sort=callTime&sort=asc"
-        );
+        const data = await fetchRiversideData(datasetId, query);
 
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
-        const data = await response.json();
         setResponses(data);
       } catch (err) {
         setError(err.message);
@@ -25,8 +22,8 @@ const CrimeResponses = () => {
       }
     };
 
-    fetchData();
-    const intervalId = setInterval(fetchData, 30000); // Fetch data every 30 seconds
+    getCrimeData();
+    const intervalId = setInterval(getCrimeData, 120000); // Fetch data every 2 minutes
 
     return () => clearInterval(intervalId); // Cleanup interval on component unmount
   }, []);
