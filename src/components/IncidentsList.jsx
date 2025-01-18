@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import GaugeChart from "react-gauge-chart";
 
 function IncidentList({ featureCollection, toggle, setToggle }) {
-  const [sortField, setSortField] = useState("Name");
+  const [sortField, setSortField] = useState("PercentContained");
   const [sortOrder, setSortOrder] = useState("asc");
 
   // Safely extract array of Features
@@ -31,7 +31,7 @@ function IncidentList({ featureCollection, toggle, setToggle }) {
   const toggleStateLabel = toggle ? "Inactive" : "Active";
 
   return (
-    <div style={{ maxWidth: "30vw", overflowY: "scroll", padding: "1em" }}>
+    <div>
       <h2>{toggleStateLabel} Wildfires</h2>
 
       {/* Toggle button */}
@@ -51,6 +51,7 @@ function IncidentList({ featureCollection, toggle, setToggle }) {
           <option value="County">County</option>
           <option value="Updated">Updated</option>
           <option value="AcresBurned">Acres Burned</option>
+          <option value="PercentContained">Percent Contained</option>
         </select>
         <button
           onClick={() => setSortOrder(sortOrder === "asc" ? "desc" : "asc")}

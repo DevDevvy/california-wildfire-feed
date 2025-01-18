@@ -1,6 +1,5 @@
 import { useEffect, useState, useContext } from "react";
 import { UserContext } from "./context/UserContext";
-import axios from "axios";
 import IncidentList from "./components/IncidentsList";
 import MapView from "./components/MapView";
 import Footer from "./components/Footer";
@@ -8,9 +7,9 @@ import Header from "./components/Header";
 import FireResponses from "./components/RiversideFireDepartmentResponseList";
 import CrimeResponses from "./components/RiversideCrimeReportsList";
 import EarthquakeComponent from "./components/EarthquakeList";
-import { UserProvider } from "./context/UserProvider";
 import AQIComponent from "./components/AQIComponent";
 import { fetchIncidents } from "./api/data";
+import CurrentWeatherBanner from "./components/CurrentWeatherBanner";
 
 function App() {
   const { fetchUserLocation } = useContext(UserContext);
@@ -18,7 +17,6 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [toggle, setToggle] = useState(false);
   const googleApiKey = import.meta.env.VITE_GOOGLE_API_KEY;
-  const API_URL = `/api/umbraco/api/IncidentApi/GeoJsonList?inactive=${toggle}`;
 
   useEffect(() => {
     fetchUserLocation();
@@ -65,6 +63,7 @@ function App() {
                 </div>
               )}
             </div>
+            <CurrentWeatherBanner />
             <div className="earthquakes">
               <EarthquakeComponent />
             </div>

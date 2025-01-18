@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../context/UserContext";
-import "../App.css";
+import "./AQIComponent.css";
 import { fetchAQI } from "../api/data";
 
 const AQIComponent = () => {
@@ -51,7 +51,6 @@ const AQIComponent = () => {
 
   return (
     <div className="aqi-container">
-      <h2>Air Quality Index (AQI)</h2>
       {loading ? (
         <p>Loading AQI data...</p>
       ) : aqiData && aqiData.list && aqiData.list.length > 0 ? (

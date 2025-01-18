@@ -43,6 +43,8 @@ main {
   display: flex;
   overflow: hidden;
   height: 80vh;
+  border-top: 1px solid #4a0a0a;
+  border-bottom: 1px solid #4a0a0a;
 }
 
 /* Incident List Styles */
@@ -143,41 +145,4 @@ footer {
 
 .mt-1 {
   margin-top: 1em;
-}
-
-/* AQI Component */
-.aqi-container {
-  background: #f9f9f9;
-  border: 1px solid #ddd;
-  text-align: center;
-}
-
-.banner {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1em;
-  padding: 0.5em;
-  background: #333;
-  justify-content: center;
-}
-
-.pollutant {
-  font-weight: bold;
-  font-size: 1.2em;
-}
-
-.severity-table {
-  margin-top: 1em;
-}
-
-.severity-table table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.severity-table th,
-.severity-table td {
-  border: 1px solid #ddd;
-  padding: 0.5em;
-  text-align: center;
 }

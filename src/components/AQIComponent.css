@@ -1,0 +1,35 @@
+/* AQI Component */
+.aqi-container {
+  text-align: center;
+  border-top: 1px solid #000000;
+}
+
+.banner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  padding: 0.5em;
+  background: #333;
+  justify-content: center;
+}
+
+.pollutant {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.severity-table {
+  margin-top: 1em;
+}
+
+.severity-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.severity-table th,
+.severity-table td {
+  border: 1px solid #ddd;
+  padding: 0.5em;
+  text-align: center;
+}

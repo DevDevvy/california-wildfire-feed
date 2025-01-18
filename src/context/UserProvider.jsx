@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { UserContext } from "./UserContext";
+import PropTypes from "prop-types";
 
 export const UserProvider = ({ children }) => {
   const [userLocation, setUserLocation] = useState(null);
@@ -26,4 +27,8 @@ export const UserProvider = ({ children }) => {
       {children}
     </UserContext.Provider>
   );
+};
+
+UserProvider.propTypes = {
+  children: PropTypes.node.isRequired,
 };
