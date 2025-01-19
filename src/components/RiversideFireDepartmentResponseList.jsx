@@ -36,12 +36,12 @@ const FireResponses = () => {
         border="1"
         style={{
           width: "100%",
+          padding: "1em",
           borderCollapse: "collapse",
         }}
       >
         <thead>
           <tr>
-            <th>Incident Number</th>
             <th>Incident Date</th>
             <th>Address</th>
             <th>Response Type</th>
@@ -50,7 +50,6 @@ const FireResponses = () => {
         <tbody>
           {responses.map((response) => (
             <tr key={response._id}>
-              <td>{response["Incident Number"]}</td>
               <td>{response["Incident Date"]}</td>
               <td>{response.Address}</td>
               <td>{response["Response Type"] || "N/A"}</td>

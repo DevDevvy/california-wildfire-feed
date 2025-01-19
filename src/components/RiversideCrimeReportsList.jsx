@@ -44,7 +44,6 @@ const CrimeResponses = () => {
             <th>Report Date</th>
             <th>Offense Date</th>
             <th>Crime Type</th>
-            <th>Case Number</th>
           </tr>
         </thead>
         <tbody>
@@ -57,7 +56,6 @@ const CrimeResponses = () => {
               <td>{response.reportDate}</td>
               <td>{response.offenseDate}</td>
               <td>{response.crimeType}</td>
-              <td>{response.caseNumber}</td>
             </tr>
           ))}
         </tbody>

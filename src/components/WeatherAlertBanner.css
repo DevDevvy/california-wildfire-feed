@@ -1,0 +1,41 @@
+.weather-alert-banner-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.weather-alert-banner {
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.weather-alert-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.weather-alert-headline {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.weather-alert-timing {
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
+}
+
+.weather-alert-details-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.weather-alert-details {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}

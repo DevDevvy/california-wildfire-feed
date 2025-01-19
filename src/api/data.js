@@ -13,9 +13,10 @@ export const fetchIncidents = async (inactive) => {
     }
 };
 
-export const fetchEarthquakes = async () => {
+
+export const fetchEarthquakes = async (timeframe = "all_hour") => {
     try {
-        const response = await fetch("/earthquakes/feed/v1.0/summary/all_hour.geojson");
+        const response = await fetch(`/earthquakes/feed/v1.0/summary/${timeframe}.geojson`);
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -61,4 +62,25 @@ export const fetchAQI = async (latitude, longitude) => {
     }
 };
 
+/*const response = await fetch(
+    `https://api.weather.gov/alerts/active.json?point=${latitude}%2C${longitude}`
+);*/
 
+export const fetchWeatherAlerts = async (latitude, longitude) => {
+    try {
+        const response = await fetch(
+            `https://api.weather.gov/alerts/active.json?point=${latitude}%2C${longitude}`
+        );
+        if (!response.ok) {
+            throw new Error("Failed to fetch weather alerts.");
+        }
+        const data = await response.json();
+        const actualAlerts = data.features.filter(
+            (alert) => alert.properties.status === "Actual"
+        );
+        return actualAlerts;
+    } catch (error) {
+        console.error("Error fetching weather alerts:", error);
+        throw error;
+    }
+}

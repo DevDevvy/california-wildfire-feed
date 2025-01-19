@@ -10,6 +10,7 @@ import EarthquakeComponent from "./components/EarthquakeList";
 import AQIComponent from "./components/AQIComponent";
 import { fetchIncidents } from "./api/data";
 import CurrentWeatherBanner from "./components/CurrentWeatherBanner";
+import WeatherAlertBanner from "./components/WeatherAlertBanner";
 
 function App() {
   const { fetchUserLocation } = useContext(UserContext);
@@ -64,6 +65,7 @@ function App() {
               )}
             </div>
             <CurrentWeatherBanner />
+            <WeatherAlertBanner />
             <div className="earthquakes">
               <EarthquakeComponent />
             </div>

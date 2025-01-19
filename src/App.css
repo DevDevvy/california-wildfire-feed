@@ -149,5 +149,85 @@ footer {
 
 /* alternae colors in tables */
 tr:nth-child(even) {
-  background-color: #d8f5df;
+  /* background-color: #d8f5df; */
+}
+
+/* earthquake data */
+.timeframe-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  margin-bottom: 1em;
+}
+@media (max-width: 1200px) {
+  .incident-list {
+    width: 40%;
+  }
+
+  .map-view {
+    width: 60%;
+  }
+
+  .response-lists {
+    flex-direction: column;
+  }
+}
+/* page breakpoints */
+@media (max-width: 768px) {
+  #root {
+    height: auto;
+    width: 100vw;
+  }
+  #body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .incidents-map-container {
+    flex-direction: column-reverse;
+    height: auto;
+  }
+
+  .incident-list {
+    width: 100%;
+    /* border-right: none; */
+
+    border-bottom: 1px solid #ddd;
+  }
+
+  .map-view {
+    width: 100%;
+    height: 50vh;
+  }
+
+  .incident-card {
+    padding: 0.5em;
+  }
+
+  .incident-card h3 {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .incident-card {
+    padding: 0.5em;
+  }
+
+  .incident-card h3 {
+    font-size: 1em;
+  }
+
+  .incident-card p {
+    font-size: 0.8em;
+  }
+
+  .incident-list {
+    padding: 0.5em;
+  }
+
+  .incident-list h2 {
+    font-size: 1em;
+  }
 }

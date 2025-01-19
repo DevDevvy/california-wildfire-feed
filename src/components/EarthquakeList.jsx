@@ -5,11 +5,12 @@ const EarthquakeComponent = () => {
   const [earthquakes, setEarthquakes] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [timeframe, setTimeframe] = useState("all_hour"); // Default to one hour
 
   useEffect(() => {
     const getEarthquakeData = async () => {
       try {
-        const data = await fetchEarthquakes();
+        const data = await fetchEarthquakes(timeframe);
         setEarthquakes(data.features);
       } catch (err) {
         setError(err.message);
@@ -22,14 +23,35 @@ const EarthquakeComponent = () => {
     const intervalId = setInterval(getEarthquakeData, 60000); // Fetch data every minute
 
     return () => clearInterval(intervalId); // Cleanup interval on component unmount
-  }, []);
+  }, [timeframe]);
+
+  const getSeverityColor = (magnitude) => {
+    if (magnitude < 3.0) return "#d4edda"; // Light green for minor quakes
+    if (magnitude < 5.0) return "#fff3cd"; // Light yellow for light quakes
+    if (magnitude < 7.0) return "#f8d7da"; // Light red for moderate quakes
+    return "#f5c6cb"; // Dark red for strong quakes
+  };
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
 
   return (
-    <div>
-      <h2>Recent Earthquakes</h2>
+    <div style={{ padding: "1em" }}>
+      <h2>Recent Earthquakes (Global)</h2>
+      <div className="timeframe-buttons">
+        <button
+          onClick={() => setTimeframe("all_hour")}
+          disabled={timeframe === "all_hour"}
+        >
+          Last Hour
+        </button>
+        <button
+          onClick={() => setTimeframe("all_day")}
+          disabled={timeframe === "all_day"}
+        >
+          Last Day
+        </button>
+      </div>
       <table border="1" style={{ width: "100%", borderCollapse: "collapse" }}>
         <thead>
           <tr>
@@ -42,11 +64,16 @@ const EarthquakeComponent = () => {
         </thead>
         <tbody>
           {earthquakes.map((quake) => (
-            <tr key={quake.id}>
+            <tr
+              key={quake.id}
+              style={{
+                backgroundColor: getSeverityColor(quake.properties.mag),
+              }}
+            >
               <td>{quake.properties.mag}</td>
               <td>{quake.properties.place}</td>
               <td>{new Date(quake.properties.time).toLocaleString()}</td>
-              <td>{quake.geometry.coordinates[2]}</td>
+              <td>{quake.geometry.coordinates[2].toFixed(3)}</td>
               <td>
                 <a
                   href={quake.properties.url}

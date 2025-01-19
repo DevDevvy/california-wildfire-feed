@@ -4,7 +4,7 @@ import "../App.css";
 const Header = () => {
   return (
     <header>
-      <h1>Southern California Wildfire Tracker</h1>
+      <h1>DISASTER COMMAND</h1>
     </header>
   );
 };
