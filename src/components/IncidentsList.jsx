@@ -70,7 +70,6 @@ function IncidentList({ featureCollection, toggle, setToggle }) {
             <h3>
               {props.Name} {props.Type ? `(${props.Type})` : ""}
             </h3>
-
             {/* GaugeChart for % contained */}
             <GaugeChart
               id={`gauge-chart-${key}`}
@@ -80,7 +79,7 @@ function IncidentList({ featureCollection, toggle, setToggle }) {
               style={{ width: "10em", height: "5em" }}
               colors={["#f03d16", "#f0dc16", "#16f030"]}
             />
-
+            (Percent Contained)
             <p>
               <strong>County:</strong> {props.County}
             </p>
@@ -105,7 +104,6 @@ function IncidentList({ featureCollection, toggle, setToggle }) {
               <strong>Last Update:</strong>{" "}
               {props.Updated ? new Date(props.Updated).toLocaleString() : "N/A"}
             </p>
-
             {/* Optional fields */}
             {props.AdminUnit && (
               <p>
@@ -133,7 +131,6 @@ function IncidentList({ featureCollection, toggle, setToggle }) {
                 <em>CalFire Incident</em>
               </p>
             )}
-
             {/* Link */}
             {props.Url && (
               <a href={props.Url} target="_blank" rel="noopener noreferrer">
