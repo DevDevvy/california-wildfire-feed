@@ -42,8 +42,9 @@ npm install
 2. Add the following variable to the `.env` file:
    ```
    VITE_GOOGLE_API_KEY=your_google_maps_api_key_here
+   VITE_OPENWEATHER_API_KEY=your_openweather_api_key_here
    ```
-   - If you do not wish to use the Google Maps feature, leave this variable empty.
+   - If you do not wish to use the Google Maps feature, leave this variable empty. The OpenWeather API is free for individuals as long as they stay under 1,000 API calls per day and is free to sign up.
 
 ---
 
