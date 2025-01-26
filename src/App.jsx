@@ -11,6 +11,8 @@ import AQIComponent from "./components/AQIComponent";
 import { fetchIncidents } from "./api/data";
 import CurrentWeatherBanner from "./components/CurrentWeatherBanner";
 import WeatherAlertBanner from "./components/WeatherAlertBanner";
+import SpaceWeatherCard from "./components/SpaceWeatherCard";
+import NASAPhotoOfTheDay from "./components/NASAPhotoOfTheDay";
 
 function App() {
   const { fetchUserLocation } = useContext(UserContext);
@@ -68,6 +70,10 @@ function App() {
             <WeatherAlertBanner />
             <div className="earthquakes">
               <EarthquakeComponent />
+            </div>
+            <div className="space-cards">
+              <SpaceWeatherCard />
+              <NASAPhotoOfTheDay />
             </div>
             <div className="response-lists">
               <FireResponses />

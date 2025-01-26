@@ -17,22 +17,16 @@
   color: #b0b0b5;
 }
 
-.card-content {
-  margin-top: 20px;
+.card-image img {
+  width: 100%;
+  border-radius: 8px;
+  margin: 20px 0;
 }
 
-.card-section {
-  margin-bottom: 15px;
-}
-
-.card-section h3 {
-  font-size: 1.2rem;
-  color: #82d4ff;
-}
-
-.card-section p {
+.card-content p {
   font-size: 0.95rem;
   color: #d4d4dc;
+  line-height: 1.5;
 }
 
 .loading {
