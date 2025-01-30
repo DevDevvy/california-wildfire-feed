@@ -36,7 +36,7 @@ const EarthquakeComponent = () => {
   if (error) return <div>Error: {error}</div>;
 
   return (
-    <div style={{ padding: "1em" }}>
+    <div className="earthquake-container">
       <h2>Recent Earthquakes (Global)</h2>
       <div className="timeframe-buttons">
         <button
@@ -52,7 +52,13 @@ const EarthquakeComponent = () => {
           Last Day
         </button>
       </div>
-      <table border="1" style={{ width: "100%", borderCollapse: "collapse" }}>
+      <table
+        border="1"
+        style={{
+          width: "100%",
+          borderCollapse: "collapse",
+        }}
+      >
         <thead>
           <tr>
             <th>Magnitude</th>
@@ -62,7 +68,7 @@ const EarthquakeComponent = () => {
             <th>Details</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody style={{ color: "#333" }}>
           {earthquakes.map((quake) => (
             <tr
               key={quake.id}

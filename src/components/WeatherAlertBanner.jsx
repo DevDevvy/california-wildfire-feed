@@ -47,7 +47,11 @@ const WeatherAlertBanner = () => {
   if (loading) return <div>Loading weather alerts...</div>;
   if (error) return <div>Error: {error}</div>;
   if (!alertData || alertData.length === 0)
-    return <div>No active weather alerts at your location.</div>;
+    return (
+      <div className="no-weather-alert">
+        No active weather alerts at your location.
+      </div>
+    );
 
   return (
     <div className="weather-alert-banner-container">

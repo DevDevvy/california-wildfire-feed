@@ -5,6 +5,16 @@ label {
   margin-bottom: 0.5em;
   color: #ffffff;
 }
+
+h3 {
+  text-align: center;
+}
+
+.toggle-button {
+  /* center in div */
+  display: block;
+  margin: 0 auto;
+}
 .incidents-list-container {
   background: #2c2c34;
   color: "white";

@@ -39,3 +39,9 @@
   margin-top: 1rem;
   font-size: 0.9rem;
 }
+
+.no-weather-alert {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #a3a3a3;
+}

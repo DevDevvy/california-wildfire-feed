@@ -75,7 +75,7 @@ function IncidentList({ featureCollection, toggle, setToggle }) {
             <GaugeChart
               id={`gauge-chart-${key}`}
               percent={(props.PercentContained || 0) / 100}
-              textColor="#000"
+              textColor="white"
               animate={false}
               style={{ width: "10em", height: "5em" }}
               colors={["#f03d16", "#f0dc16", "#16f030"]}

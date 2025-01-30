@@ -15,10 +15,12 @@
 .card-header p {
   font-size: 0.9rem;
   color: #b0b0b5;
+  text-align: center;
 }
 
 .card-content {
   margin-top: 20px;
+  text-align: center;
 }
 
 .card-section {

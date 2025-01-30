@@ -59,6 +59,17 @@ main {
   justify-content: space-between;
 }
 
+.earthquake-container {
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #2c2c34;
+  color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  height: 30em;
+  overflow-y: auto;
+}
+
 /* Footer */
 footer {
   background-color: #333;
