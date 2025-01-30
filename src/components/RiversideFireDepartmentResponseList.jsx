@@ -30,7 +30,14 @@ const FireResponses = () => {
   if (error) return <div>Error: {error}</div>;
 
   return (
-    <div style={{ padding: "1em", border: "1px solid #ccc" }}>
+    <div
+      style={{
+        padding: "1em",
+        border: "1px solid #ccc",
+        height: "400px",
+        overflowY: "auto",
+      }}
+    >
       <h2>Fire Department Responses</h2>
       <table
         border="1"
@@ -38,6 +45,7 @@ const FireResponses = () => {
           width: "100%",
           padding: "1em",
           borderCollapse: "collapse",
+          fontSize: "0.8em",
         }}
       >
         <thead>

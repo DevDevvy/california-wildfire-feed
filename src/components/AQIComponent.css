@@ -2,7 +2,7 @@
 .aqi-container {
   text-align: center;
   border-top: 1px solid #000000;
-  background-color: #d1cfcf;
+  background-color: #333;
 }
 
 .banner {
@@ -34,4 +34,3 @@
   padding: 0.5em;
   text-align: center;
 }
-

@@ -32,9 +32,19 @@ const CrimeResponses = () => {
   if (error) return <div>Error: {error}</div>;
 
   return (
-    <div style={{ padding: "1em", border: "1px solid #ccc" }}>
+    <div
+      style={{
+        padding: "1em",
+        border: "1px solid #ccc",
+        height: "400px",
+        overflowY: "auto",
+      }}
+    >
       <h2>Crime Responses</h2>
-      <table border="1" style={{ width: "100%", borderCollapse: "collapse" }}>
+      <table
+        border="1"
+        style={{ fontSize: "0.8em", width: "100%", borderCollapse: "collapse" }}
+      >
         <thead>
           <tr>
             <th>Block Address</th>

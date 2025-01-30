@@ -2,6 +2,7 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 import GaugeChart from "react-gauge-chart";
+import "./IncidentsList.css";
 
 function IncidentList({ featureCollection, toggle, setToggle }) {
   const [sortField, setSortField] = useState("PercentContained");
@@ -31,7 +32,7 @@ function IncidentList({ featureCollection, toggle, setToggle }) {
   const toggleStateLabel = toggle ? "Inactive" : "Active";
 
   return (
-    <div>
+    <div className="incidents-list-container">
       <h2>{toggleStateLabel} Wildfires</h2>
 
       {/* Toggle button */}
