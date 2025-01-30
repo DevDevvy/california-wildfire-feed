@@ -6,7 +6,7 @@ label {
   color: #ffffff;
 }
 .incidents-list-container {
-  background: #333;
+  background: #2c2c34;
   color: "white";
   padding: 1em;
 }
@@ -29,20 +29,20 @@ label {
   border-radius: 5px;
   padding: 1em;
   margin-bottom: 1em;
-  background-color: #f9f9f9;
+  background-color: #333;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .incident-card h3 {
   margin: 0 0 0.5em;
   font-size: 1.1em;
-  color: #0056b3;
+  color: #ffffff;
 }
 
 .incident-card p {
   margin: 0.5em 0;
   font-size: 0.9em;
-  color: #555;
+  color: #ffffff;
 }
 
 .incident-card a {
