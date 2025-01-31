@@ -13,6 +13,7 @@ import CurrentWeatherBanner from "./components/CurrentWeatherBanner";
 import WeatherAlertBanner from "./components/WeatherAlertBanner";
 import SpaceWeatherCard from "./components/SpaceWeatherCard";
 import NASAPhotoOfTheDay from "./components/NASAPhotoOfTheDay";
+import WhiteHouseData from "./components/WhiteHouseData";
 
 function App() {
   const { fetchUserLocation } = useContext(UserContext);
@@ -76,6 +77,7 @@ function App() {
               <EarthquakeComponent />
               <NASAPhotoOfTheDay />
             </div>
+            <WhiteHouseData />
             <div className="response-lists">
               <FireResponses />
               <CrimeResponses />

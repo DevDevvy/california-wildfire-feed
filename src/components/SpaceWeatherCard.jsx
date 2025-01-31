@@ -50,7 +50,7 @@ const SpaceWeatherCard = () => {
   }
 
   return (
-    <div className="card">
+    <div className="space-weather-card">
       <div className="card-header">
         <h2>Space Weather Advisory</h2>
         <p>Data provided by NOAA Space Weather Prediction Center</p>

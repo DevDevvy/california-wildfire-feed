@@ -44,7 +44,6 @@ const CurrentWeatherBanner = () => {
 
   useEffect(() => {
     const fetchWeather = async () => {
-      console.log("fetch weather userLocation", userLocation);
       if (userLocation) {
         try {
           const { latitude, longitude } = userLocation;

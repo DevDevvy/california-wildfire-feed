@@ -10,7 +10,6 @@ export const UserProvider = ({ children }) => {
       navigator.geolocation.getCurrentPosition(
         (position) => {
           const { latitude, longitude } = position.coords;
-          console.log("Fetched location:", { latitude, longitude });
           setUserLocation({ latitude, longitude });
         },
         (error) => {
