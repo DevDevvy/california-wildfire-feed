@@ -30,10 +30,6 @@ header {
   align-items: center;
 }
 
-h2 {
-  text-align: center;
-}
-
 /* Main Layout */
 main {
   display: flex;
@@ -67,6 +63,20 @@ main {
   justify-content: space-between;
 }
 
+.response-lists h2 {
+  text-align: center;
+  color: #66c2ff;
+}
+
+.earthquakes-and-space-photo {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: stretch;
+  flex-wrap: wrap;
+  padding: 1em;
+}
+
 .earthquake-container {
   margin: 20px auto;
   padding: 20px;
@@ -76,6 +86,12 @@ main {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   height: 30em;
   overflow-y: auto;
+  width: 50%;
+}
+
+.earthquake-container h2 {
+  text-align: center;
+  color: #66c2ff;
 }
 
 /* Footer */
@@ -104,11 +120,6 @@ footer {
 
 .mt-1 {
   margin-top: 1em;
-}
-
-/* alternae colors in tables */
-tr:nth-child(even) {
-  /* background-color: #d8f5df; */
 }
 
 /* earthquake data */

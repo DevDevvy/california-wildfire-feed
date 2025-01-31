@@ -4,6 +4,7 @@ import "./NASAPhotoOfTheDay.css";
 const NASAPhotoOfTheDay = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [details, setDetails] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -23,6 +24,10 @@ const NASAPhotoOfTheDay = () => {
 
     fetchData();
   }, []);
+
+  const showDetailsClick = () => {
+    setDetails(!details);
+  };
 
   if (loading) {
     return (
@@ -54,9 +59,14 @@ const NASAPhotoOfTheDay = () => {
       <div className="card-image">
         <img src={data.url} alt={data.title} />
       </div>
-      <div className="card-content">
-        <p>{data.explanation}</p>
-      </div>
+      <button className="space-photo-button" onClick={() => showDetailsClick()}>
+        Details
+      </button>
+      {details ? (
+        <div className="card-content">
+          <p>{data.explanation}</p>
+        </div>
+      ) : null}
     </div>
   );
 };

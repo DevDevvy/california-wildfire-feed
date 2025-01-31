@@ -12,17 +12,13 @@
   font-size: 1.5rem;
   color: #66c2ff;
   margin: 0;
+  text-align: center;
 }
 
 .card-header p {
   font-size: 0.9rem;
   color: #b0b0b5;
-  text-align: center;
   margin: 0;
-}
-
-.card-content {
-  text-align: center;
 }
 
 .card-section h3 {

@@ -5,6 +5,7 @@
   color: white;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 40%;
 }
 
 .card-header h2 {
@@ -27,6 +28,12 @@
   font-size: 0.95rem;
   color: #d4d4dc;
   line-height: 1.5;
+}
+
+.space-photo-button {
+  /* align button center */
+  display: block;
+  margin: 0 auto;
 }
 
 .loading {

@@ -72,10 +72,8 @@ function App() {
               )}
             </div>
 
-            <div className="earthquakes">
+            <div className="earthquakes-and-space-photo">
               <EarthquakeComponent />
-            </div>
-            <div className="space-cards">
               <NASAPhotoOfTheDay />
             </div>
             <div className="response-lists">

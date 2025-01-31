@@ -45,6 +45,6 @@
 .weather-details {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
   justify-content: space-between;
 }

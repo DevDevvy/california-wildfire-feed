@@ -6,7 +6,7 @@ label {
   color: #ffffff;
 }
 
-h3 {
+.incident-card h3 {
   text-align: center;
 }
 
@@ -32,6 +32,7 @@ h3 {
   font-size: 1.25em;
   margin-bottom: 1em;
   color: #ffffff;
+  text-align: center;
 }
 
 .incident-card {
