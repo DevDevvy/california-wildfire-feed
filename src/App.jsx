@@ -52,7 +52,10 @@ function App() {
             <div className="aqi-component">
               <AQIComponent />
             </div>
-            <CurrentWeatherBanner />
+            <div className="weather-and-space">
+              <CurrentWeatherBanner />
+              <SpaceWeatherCard />
+            </div>
             <WeatherAlertBanner />
             <div className="incidents-map-container">
               <div className="incident-list">
@@ -73,7 +76,6 @@ function App() {
               <EarthquakeComponent />
             </div>
             <div className="space-cards">
-              <SpaceWeatherCard />
               <NASAPhotoOfTheDay />
             </div>
             <div className="response-lists">

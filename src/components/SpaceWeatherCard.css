@@ -1,6 +1,7 @@
 .card {
   margin: 20px auto;
   padding: 20px;
+  width: 60%;
   background-color: #2c2c34;
   color: white;
   border-radius: 8px;
@@ -10,31 +11,30 @@
 .card-header h2 {
   font-size: 1.5rem;
   color: #66c2ff;
+  margin: 0;
 }
 
 .card-header p {
   font-size: 0.9rem;
   color: #b0b0b5;
   text-align: center;
+  margin: 0;
 }
 
 .card-content {
-  margin-top: 20px;
   text-align: center;
-}
-
-.card-section {
-  margin-bottom: 15px;
 }
 
 .card-section h3 {
   font-size: 1.2rem;
   color: #82d4ff;
+  margin: 0;
 }
 
 .card-section p {
   font-size: 0.95rem;
   color: #d4d4dc;
+  margin: 0;
 }
 
 .loading {

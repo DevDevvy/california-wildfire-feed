@@ -39,6 +39,14 @@ main {
   display: flex;
   flex-direction: column;
 }
+
+.weather-and-space {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: wrap;
+  padding: 1em;
+}
 .incidents-map-container {
   display: flex;
   overflow: hidden;
