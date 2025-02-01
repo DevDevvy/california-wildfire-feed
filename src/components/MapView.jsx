@@ -62,7 +62,7 @@ function MapView({ geoData }) {
         position={position}
         onCloseClick={() => setSelectedFeature(null)}
       >
-        <div>
+        <div className="fire-map-data">
           <h3>{name}</h3>
           <p>Acres Burned: {acresBurned}</p>
           <p>Percent Contained: {percentContained}%</p>

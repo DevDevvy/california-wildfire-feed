@@ -40,7 +40,7 @@ const WeatherAlertBanner = () => {
       case "Extreme":
         return "#f5c2c7"; // Darker red
       default:
-        return "#f8f9fa"; // Light gray
+        return "#2a2828"; // Light gray
     }
   };
 

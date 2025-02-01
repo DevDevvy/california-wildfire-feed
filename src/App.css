@@ -94,7 +94,9 @@ main {
   text-align: center;
   color: #66c2ff;
 }
-
+.fire-map-data {
+  color: #333;
+}
 /* Footer */
 footer {
   background-color: #333;
