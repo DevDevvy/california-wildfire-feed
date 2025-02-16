@@ -20,6 +20,11 @@ export default defineConfig({
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/earthquakes/, ''),
       },
+      '/radiation': {
+        target: 'https://radnet.epa.gov',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/radiation/, ''),
+      },
     },
   },
 });

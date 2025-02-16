@@ -14,6 +14,7 @@ import WeatherAlertBanner from "./components/WeatherAlertBanner";
 import SpaceWeatherCard from "./components/SpaceWeatherCard";
 import NASAPhotoOfTheDay from "./components/NASAPhotoOfTheDay";
 import WhiteHouseData from "./components/WhiteHouseData";
+import RadnetData from "./components/RadnetData";
 
 function App() {
   const { fetchUserLocation } = useContext(UserContext);
@@ -58,6 +59,7 @@ function App() {
               <SpaceWeatherCard />
             </div>
             <WeatherAlertBanner />
+            <RadnetData />
             <div className="incidents-map-container">
               <div className="incident-list">
                 <IncidentList

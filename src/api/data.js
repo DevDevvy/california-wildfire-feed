@@ -1,5 +1,7 @@
 
 import axios from "axios";
+import Papa from "papaparse";
+
 
 const API_KEY = import.meta.env.VITE_OPENWEATHER_API_KEY;
 
@@ -44,7 +46,51 @@ export const fetchRiversideData = async (datasetId, query = "") => {
     }
 };
 
+export const fetchCaliforniaRadiationCSV = async (city) => {
+    try {
+        const response = await fetch(
+            `radiation/cdx-radnet-rest/api/rest/csv/2025/fixed/CA/${city}`
+        );
+        if (!response.ok) {
+            throw new Error(
+                `Error ${response.status} fetching data for ${city}`
+            );
+        }
+        const csvString = await response.text();
 
+        // Parse CSV with PapaParse
+        let sanitized = csvString
+            .replace(/\r\n/g, "\n") // Replace CRLF with LF
+            .replace(/\r/g, "\n");  // Replace lone CR with LF
+
+        // Now parse the "normalized" string
+        const parsed = Papa.parse(sanitized, {
+            header: true,
+            skipEmptyLines: "greedy",
+            newline: "\n"
+        });
+
+        console.log("parsed", parsed);
+        if (parsed.errors && parsed.errors.length > 0) {
+            console.warn("Parsing errors:", parsed.errors);
+        }
+
+        // Extract relevant data
+        const dataRows = parsed.data.map((row) => ({
+            location: row["LOCATION_NAME"],
+            dateTime: row["SAMPLE COLLECTION TIME"].split(" ")[0],
+            r02: parseFloat(row["GAMMA COUNT RATE R02 (CPM)"]) || 0,
+        }));
+
+        // Sort by date/time to ensure chronological order
+        dataRows.sort((a, b) => new Date(a.dateTime) - new Date(b.dateTime));
+
+        return dataRows;
+    } catch (error) {
+        console.error(`Error fetching Riverside data for radiation dataset:`, error);
+        throw error;
+    }
+};
 
 export const fetchAQI = async (latitude, longitude) => {
     try {
