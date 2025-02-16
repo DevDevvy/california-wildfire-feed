@@ -82,10 +82,14 @@ export const fetchCaliforniaRadiationCSV = async (city) => {
             r02: parseFloat(row["GAMMA COUNT RATE R02 (CPM)"]) || 0,
         }));
 
+        const count = dataRows.length;
+        const sum = dataRows.reduce((acc, row) => acc + row.r02, 0);
+        const avg = sum / count;
+
         // Sort by date/time to ensure chronological order
         dataRows.sort((a, b) => new Date(a.dateTime) - new Date(b.dateTime));
 
-        return dataRows;
+        return { dataRows, avg };
     } catch (error) {
         console.error(`Error fetching Riverside data for radiation dataset:`, error);
         throw error;
@@ -107,6 +111,32 @@ export const fetchAQI = async (latitude, longitude) => {
         throw error;
     }
 };
+
+export const fetchWeatherData = async (latitude, longitude) => {
+    try {
+        const response = await fetch(
+            `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=imperial`
+        );
+        if (!response.ok) {
+            throw new Error(`API error: ${response.statusText}`);
+        }
+        return response;
+    } catch (error) {
+        console.error("Error fetching weather data:", error);
+    }
+}
+
+export const fetchSpaceData = async () => {
+    try {
+        const response = await fetch(
+            "https://services.swpc.noaa.gov/text/advisory-outlook.txt"
+        );
+        const textData = await response.text();
+        return textData;
+    } catch (error) {
+        console.error("Error fetching space weather data:", error);
+    }
+}
 
 /*const response = await fetch(
     `https://api.weather.gov/alerts/active.json?point=${latitude}%2C${longitude}`

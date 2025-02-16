@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from "react";
 import { UserContext } from "../context/UserContext";
-import "./WeatherAlertBanner.css";
+import "../styles/WeatherAlertBanner.css";
 import { fetchWeatherAlerts } from "../api/data";
 
 const WeatherAlertBanner = () => {

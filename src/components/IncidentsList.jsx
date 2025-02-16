@@ -2,7 +2,7 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 import GaugeChart from "react-gauge-chart";
-import "./IncidentsList.css";
+import "../styles/IncidentsList.css";
 
 function IncidentList({ featureCollection, toggle, setToggle }) {
   const [sortField, setSortField] = useState("PercentContained");

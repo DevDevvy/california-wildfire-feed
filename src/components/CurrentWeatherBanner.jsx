@@ -13,7 +13,8 @@ import {
   faSnowflake,
 } from "@fortawesome/free-solid-svg-icons";
 import { faCloudversify } from "@fortawesome/free-brands-svg-icons";
-import "./CurrentWeatherBanner.css";
+import "../styles/CurrentWeatherBanner.css";
+import { fetchWeatherData } from "../api/data";
 
 const iconMapping = {
   "01d": faSun,
@@ -47,12 +48,7 @@ const CurrentWeatherBanner = () => {
       if (userLocation) {
         try {
           const { latitude, longitude } = userLocation;
-          const response = await fetch(
-            `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=imperial`
-          );
-          if (!response.ok) {
-            throw new Error(`API error: ${response.statusText}`);
-          }
+          const response = await fetchWeatherData(latitude, longitude);
           const data = await response.json();
           setWeatherData(data);
         } catch (error) {

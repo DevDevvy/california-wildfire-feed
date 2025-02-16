@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../context/UserContext";
-import "./AQIComponent.css";
+import "../styles/AQIComponent.css";
 import { fetchAQI } from "../api/data";
 
 const AQIComponent = () => {

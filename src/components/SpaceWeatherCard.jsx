@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import "./SpaceWeatherCard.css";
+import "../styles/SpaceWeatherCard.css";
+import { fetchSpaceData } from "../api/data";
 
 const SpaceWeatherCard = () => {
   const [data, setData] = useState(null);
@@ -8,10 +9,7 @@ const SpaceWeatherCard = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(
-          "https://services.swpc.noaa.gov/text/advisory-outlook.txt"
-        );
-        const textData = await response.text();
+        const textData = await fetchSpaceData();
         setData(parseSpaceWeatherData(textData));
         setLoading(false);
       } catch (error) {

@@ -48,6 +48,7 @@ export default function RadnetData() {
   const [latestReading, setLatestReading] = useState(null);
   const [loading, setLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
+  const [average, setAverage] = useState(0);
 
   // Fetch and parse CSV data when the component mounts or the selected city changes
   useEffect(() => {
@@ -60,9 +61,10 @@ export default function RadnetData() {
       try {
         // Encode the city name for URL (e.g., "LOS ANGELES" → "LOS%20ANGELES")
         const citySlug = encodeURIComponent(CITY_ENDPOINTS[selectedCity]);
-        const dataRows = await fetchCaliforniaRadiationCSV(citySlug);
+        const { dataRows, avg } = await fetchCaliforniaRadiationCSV(citySlug);
 
         setRadiationData(dataRows);
+        setAverage(avg);
 
         // Get the latest reading (last row in sorted array)
         if (dataRows.length > 0) {
@@ -113,6 +115,7 @@ export default function RadnetData() {
         padding: "1rem",
         border: "1px solid #ccc",
         margin: "1rem",
+        borderRadius: "8px",
       }}
     >
       <CityDropdown
@@ -138,6 +141,9 @@ export default function RadnetData() {
           <p>
             <strong>Gamma Count Rate (R02) (CPM):</strong>{" "}
             {latestReading.r02.toFixed(2)}
+          </p>
+          <p>
+            <strong>Average (R02) (CPM):</strong> {average.toFixed(2)}
           </p>
           <p style={{ color: severityColor }}>
             <strong>Severity:</strong> {severityLabel}

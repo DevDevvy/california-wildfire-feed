@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./NASAPhotoOfTheDay.css";
+import "../styles/NASAPhotoOfTheDay.css";
 
 const NASAPhotoOfTheDay = () => {
   const [data, setData] = useState(null);

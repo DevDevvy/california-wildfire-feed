@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "./WhiteHouseData.css";
+import "../styles/WhiteHouseData.css";
 
 const WhiteHouseData = () => {
   const [docType, setDocType] = useState("");
